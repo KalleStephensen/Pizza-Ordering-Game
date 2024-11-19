@@ -1,29 +1,55 @@
 @font-face { font-family: ARCADECLASSIC; src: url('font/ARCADECLASSIC.TTF'); } 
+:root {
+    --viewport-width: 1024px;
+    --viewport-height: 768px;
+}
+body {
+    cursor: none;
+}
 #game-viewport {
-    width: 1024px;
-    height: 768px;
+    width: var(--viewport-width);
+    height: var(--viewport-height);
     margin: auto;
     background-color: black;
     color: white;
     font-family: ARCADECLASSIC;
+    word-spacing: 0.4em;
+    /* text animation */
+    animation-duration: 0.01s;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .container {
     display: flex;
     flex-direction: column;
 }
+#overlay {
+    z-index: 1;
+    background-color: black;
+    position: absolute;
+    width: var(--viewport-width);
+    height: var(--viewport-height);
+    display: none;
+    opacity: 1;
+    animation-name: overlaychange;
+    animation-duration: 1s;
+}
 #image-container  {
     width: 100%;
-    height: 45%;
+    height: 50%;
 }
 #image-container img {
     margin: auto;
     height: 100%;
-    width: 50%;
+    padding: 1%;
 }
 #text-container {
     width: 100%;
-    height: 35%;
-    font-size: 28px;
+    height: 30%;
+    font-size: 1.6rem;
+    word-spacing: 0.4em;
 }
 #text-container p {
     padding: 0 2%;
@@ -42,4 +68,56 @@
 #dialog-container div:hover {
     color: red;
     padding-left: 3%;
+}
+#start-button {
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: 35%;
+    height: 15%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+}
+#start-button:hover {
+    color: red;    
+}
+#start-button p {
+    margin: auto;
+}
+
+
+@keyframes overlaychange {
+    from { 
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes textflicker {
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+    to {
+        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+
+
+.pizza-cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    pointer-events: none; /* Ensures it doesn't interfere with clicking */
+    background: url('http://www.rw-designer.com/cursor-extern.php?id=79446') no-repeat center/contain;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
 }
