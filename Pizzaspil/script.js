@@ -107,6 +107,22 @@ const scenario92 = {
     option3:"",
     option4:"",
 }
+const endScenario1 = {
+    scenarioImage:'images/s2.png',
+    text:'',
+    option1:"",
+    option2:"",
+    option3:"",
+    option4:"",
+}
+const endScenario2 = {
+    scenarioImage:'images/placeholder.jpg',
+    text:'',
+    option1:"",
+    option2:"",
+    option3:"",
+    option4:"",
+}
 
 let backgroundMusic = new Audio('audio/background-music.mp3');
 let buttonSound = new Audio('audio/button.mp3');
@@ -125,9 +141,10 @@ let currentScenario = startScenario
 updateCurrentScenario()
 
 function start() {
-    document.getElementById('start-button').remove();
+    document.getElementById('start-button').style.display = "none";
     currentScenario = scenario1
     updateCurrentScenario()
+    backgroundMusic.currentTime = 0
     backgroundMusic.play()
 }
 
@@ -156,7 +173,13 @@ function option1() {
             scenario7Text()
         } else if (currentScenario == scenario7) {
             currentScenario = scenario8
-        }
+        } else if (currentScenario == scenario8) {
+            currentScenario = scenario91
+        } else if (currentScenario == scenario91) {
+            currentScenario = endScenario1
+        } else if (currentScenario == scenario92) {
+            currentScenario = endScenario2
+        } 
         
         updateCurrentScenario()
         buttonSound.play()
@@ -182,6 +205,8 @@ function option2() {
             topping = scenario62.option2.slice(2)
             currentScenario = scenario7
             scenario7Text()
+        } else if (currentScenario == scenario8) {
+            currentScenario = scenario92
         }
 
         updateCurrentScenario()
@@ -217,7 +242,7 @@ function option4() {
         }
 
         updateCurrentScenario()
-        buttonSound.play()
+        buttonSound.play()  
     }
 }
 
@@ -250,7 +275,32 @@ function updateCurrentScenario() {
             }
         }
     }
-    document.getElementById('myImage').src = currentScenario.scenarioImage;
+    if (currentScenario == endScenario1 | currentScenario == endScenario2) {
+        if (currentScenario == endScenario1) {
+            document.getElementById('image-overlay').src = currentScenario.scenarioImage
+            document.getElementById('image-overlay-container').style.display = "block"
+        } else if (currentScenario == endScenario2) {
+            document.getElementById('image-overlay').src = currentScenario.scenarioImage
+            document.getElementById('image-overlay-container').style.display = "block"
+        }
+        setTimeout(restart, 5000)
+        function restart() {
+            pizzabund = ""
+            sauce = ""
+            toppingType = ""
+            topping = ""
+
+            i = 0
+            enableButton = true
+
+            currentScenario = startScenario
+            document.getElementById('image-overlay-container').style.display = "none"
+            document.getElementById('start-button').style.display = "flex"
+            backgroundMusic.pause()
+            updateCurrentScenario()
+        }
+    }
+    document.getElementById('screen-image').src = currentScenario.scenarioImage;
 }
 
 function scenario7Text() {
