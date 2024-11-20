@@ -5,6 +5,7 @@
 }
 body {
     cursor: none;
+    background-color: black;
 }
 #game-viewport {
     position: relative;
