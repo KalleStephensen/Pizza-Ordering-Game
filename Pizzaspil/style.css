@@ -26,7 +26,7 @@ body {
     flex-direction: column;
 }
 #overlay {
-    z-index: 1;
+    z-index: 2;
     background-color: black;
     position: absolute;
     width: var(--viewport-width);
@@ -34,7 +34,16 @@ body {
     display: none;
     opacity: 1;
     animation-name: overlaychange;
-    animation-duration: 1s;
+    animation-duration: 2s;
+}
+#crt-filter img {
+    z-index: 1;
+    position: absolute;
+    width: var(--viewport-width);
+    height: var(--viewport-height);
+    opacity: 1;
+    pointer-events: none;
+    image-rendering: crisp-edges;
 }
 #image-container  {
     width: 100%;
@@ -91,10 +100,13 @@ body {
 
 
 @keyframes overlaychange {
-    from { 
+    0% { 
         opacity: 1;
     }
-    to {
+    25% {
+        opacity: 1;
+    }
+    100% {
         opacity: 0;
     }
 }
@@ -117,7 +129,7 @@ body {
     width: 50px;
     height: 50px;
     pointer-events: none; /* Ensures it doesn't interfere with clicking */
-    background: url('http://www.rw-designer.com/cursor-extern.php?id=79446') no-repeat center/contain;
+    background: url('cursor/Pizza.cur') no-repeat center/contain;
     z-index: 1000;
     transform: translate(-50%, -50%);
 }

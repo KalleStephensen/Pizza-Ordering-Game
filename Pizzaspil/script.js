@@ -5,8 +5,8 @@ document.body.appendChild(pizzaCursor);
 
 // Update cursor position
 document.addEventListener('mousemove', (e) => {
-    pizzaCursor.style.left = `${e.pageX}px`;
-    pizzaCursor.style.top = `${e.pageY}px`;
+    pizzaCursor.style.left = `${e.pageX+25}px`;
+    pizzaCursor.style.top = `${e.pageY+25}px`;
 });
 
 const startScenario = {
@@ -19,7 +19,7 @@ const startScenario = {
 }
 const scenario1 = {
     scenarioImage:'images/s1.jpg',
-    text:'The night is dark and the streets of Pizzonia are almost empty. The bussteling city had fallen into it’s usual slumber. As you walk through the quiet streets you notice a dimly lit alley way, with a peculiar looking creature, standing at the end of it... It was a rat holding a piece of pizza.',
+    text:'The night is dark and the streets of Pizzonia are almost empty. The bussteling city had fallen into it’s usual slumber. As you walk through the quiet streets you notice a dimly lit alleyway, with a peculiar looking creature, standing at the end of it... It was a rat holding a piece of pizza.',
     option1:"> Approach the rat",
     option2:"",
     option3:"",
@@ -91,7 +91,7 @@ let toppingType = ""
 let topping = ""
 
 let i = 0;
-let typingSpeed = 10;
+let typingSpeed = 25;
 
 let currentScenario = startScenario;
 
@@ -187,27 +187,26 @@ function option4() {
 function updateCurrentScenario() {
     i = 0
     document.getElementById('overlay').style.display = "block";
-    setTimeout(removeOverlay, 1000)
+    document.getElementById('paragraph').innerHTML = "";
+    setTimeout(removeOverlay, 2000)
     
     function removeOverlay() {
         document.getElementById('overlay').style.display = "none";
         document.getElementById('overlay').style.opacity = "0";
+        typeText()
+        function typeText() {
+            if (i < currentScenario.text.length) {
+                document.getElementById('paragraph').innerHTML += currentScenario.text.charAt(i);
+                i++;
+                let typeTimeout = setTimeout(typeText, typingSpeed);
+            }
+        }
     }
-
-
+    
     document.getElementById('myImage').src = currentScenario.scenarioImage;
-    document.getElementById('paragraph').innerHTML = "";
     document.getElementById('option1').innerHTML = currentScenario.option1;
     document.getElementById('option2').innerHTML = currentScenario.option2;
     document.getElementById('option3').innerHTML = currentScenario.option3;
     document.getElementById('option4').innerHTML = currentScenario.option4;
-    typeText()
-    function typeText() {
-        if (i < currentScenario.text.length) {
-            document.getElementById('paragraph').innerHTML += currentScenario.text.charAt(i);
-            i++;
-            let typeTimeout = setTimeout(typeText, typingSpeed);
-        }
-    }
 }
 
