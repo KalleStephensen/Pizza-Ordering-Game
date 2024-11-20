@@ -352,10 +352,14 @@ function mute() {
     if (isMuted == false) {
         isMuted = true
         backgroundMusic.muted = true
+        badEndingMusic.muted = true
+        buttonSound.muted = true
         document.getElementById('mute-button-image').src = "images/mute.svg"
     } else if (isMuted) {
         isMuted = false
         backgroundMusic.muted = false
+        badEndingMusic.muted = false
+        buttonSound.muted = false
         document.getElementById('mute-button-image').src = "images/unmute.svg"
     }
 }
