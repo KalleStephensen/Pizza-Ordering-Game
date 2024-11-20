@@ -96,14 +96,14 @@ body {
     padding-left: 3%;
 }
 #start-button {
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
     width: 40%;
     height: 15%;
-    top: 50%;
+    top: 380px;
     display: flex;
     align-items: center;
     font-size: 4rem;
