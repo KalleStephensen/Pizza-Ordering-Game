@@ -70,10 +70,10 @@ const scenario61 = {
 const scenario62 = {
     scenarioImage:'images/s62.png',
     text:'“Ah, great choice! The healthy choice, eh? But c’mon, let’s not kid ourselves—you came here for the meat, didn’t you? I got the good stuff, don’t worry! Let’s load you up proper!“',
-    option1:"> BBQ KYLLING PIZZA (Ost, BBQ kylling, Ananas, Champignon, Karry)",
-    option2:"> KØDBOMBEN (Bacon, Kylling, Kebab, Peperoni, Skinke)",
-    option3:"> SANTA MARIA (Ost, Oksekød, Skinke, Bacon, Pølser)",
-    option4:"> MARINARA (Ost, Tun, Rejer, Muslinger, Oliven)",
+    option1:"> BBQ CHICKEN PIZZA (Cheese, BBQ Chicken, Pineapple, Mushrooms, Curry)",
+    option2:"> THE MEAT BOMB (Bacon, Chicken, Kebab, Pepperoni, Ham)",
+    option3:"> SANTA MARIA (Cheese, Beef, Ham, Bacon, Sausages)",
+    option4:"> MARINARA (Cheese, Tuna, Shrimp, Clams, Olives)",
 }
 const scenario7 = {
     scenarioImage:'images/s7.png',
@@ -268,6 +268,7 @@ function updateCurrentScenario() {
                 let typeTimeout = setTimeout(typeText, typingSpeed)
             } else {
                 enableButton = true
+                document.getElementById('paragraph').innerHTML = currentScenario.text
                 document.getElementById('option1').innerHTML = currentScenario.option1
                 document.getElementById('option2').innerHTML = currentScenario.option2
                 document.getElementById('option3').innerHTML = currentScenario.option3
@@ -305,4 +306,37 @@ function updateCurrentScenario() {
 
 function scenario7Text() {
     scenario7.text = '“That sounds like one hell of a delicious pizza! A ' + pizzabund + ' base with ' + sauce + '. Great choice going for a ' + toppingType + ' pizza. And that ' + topping + ' — now that sounds downright naughty!”'
+}
+
+// skip text animation
+function skip() {
+    i = currentScenario.text.length
+}
+
+// change theme button
+const standardTheme = {
+    bgColor:'black',
+    color:'white',
+}
+const lightTheme = {
+    bgColor:'#f4ecd8',
+    color:'black',
+}
+const pinkTheme = {
+    bgColor:'pink',
+    color:'white',
+}
+
+let theme = standardTheme
+
+function changeTheme() {
+    if (theme == standardTheme) {
+        theme = lightTheme    
+    } else if (theme == lightTheme) {
+        theme = pinkTheme
+    } else if (theme == pinkTheme) {
+        theme = standardTheme
+    }
+    document.getElementById('game-viewport').style.backgroundColor = theme.bgColor
+    document.getElementById('game-viewport').style.color = theme.color
 }
