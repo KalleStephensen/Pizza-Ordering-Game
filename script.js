@@ -125,6 +125,7 @@ const endScenario2 = {
 }
 
 let backgroundMusic = new Audio('audio/background-music.mp3');
+let badEndingMusic = new Audio('audio/bad-ending.mp3');
 let buttonSound = new Audio('audio/button.mp3');
 
 let pizzabund = ""
@@ -207,6 +208,8 @@ function option2() {
             scenario7Text()
         } else if (currentScenario == scenario8) {
             currentScenario = scenario92
+            backgroundMusic.pause()
+            badEndingMusic.play()
         }
 
         updateCurrentScenario()
@@ -298,6 +301,7 @@ function updateCurrentScenario() {
             document.getElementById('image-overlay-container').style.display = "none"
             document.getElementById('start-button').style.display = "flex"
             backgroundMusic.pause()
+            badEndingMusic.pause()
             updateCurrentScenario()
         }
     }
@@ -339,4 +343,19 @@ function changeTheme() {
     }
     document.getElementById('game-viewport').style.backgroundColor = theme.bgColor
     document.getElementById('game-viewport').style.color = theme.color
+}
+
+// mute
+let isMuted = false
+
+function mute() {
+    if (isMuted == false) {
+        isMuted = true
+        backgroundMusic.muted = true
+        document.getElementById('mute-button-image').src = "images/mute.svg"
+    } else if (isMuted) {
+        isMuted = false
+        backgroundMusic.muted = false
+        document.getElementById('mute-button-image').src = "images/unmute.svg"
+    }
 }

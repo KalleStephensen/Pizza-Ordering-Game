@@ -56,48 +56,48 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#646464;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        id="path1"
        cx="8"
        cy="8"
        r="3" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="M 8,3 V 1"
        id="path2"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="M 8,15 V 13"
        id="path2-2"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="M 1,8 H 3"
        id="path2-2-1"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="m 13,8 h 2"
        id="path2-2-1-5"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="M 11.535534,4.4644661 12.949747,3.0502525"
        id="path2-6"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="M 3.0502527,12.949748 4.4644663,11.535534"
        id="path2-2-8"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="M 3.0502527,3.0502525 4.4644663,4.4644661"
        id="path2-2-1-57"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#646464;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
        d="m 11.535534,11.535534 1.414213,1.414214"
        id="path2-2-1-5-6"
        sodipodi:nodetypes="cc" />

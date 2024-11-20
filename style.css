@@ -114,23 +114,56 @@ body {
 #start-button p {
     margin: auto;
 }
-#theme-button {
+
+
+
+/* dropdown menu */
+.icon {
     z-index: 4;
     position: fixed;
-    width: 3%;
-    height: 5%;
+    width: 40px;
+    height: 40px;
     padding: 10px;
 }
-#theme-button img {
-    width: 100%;
-    height: 100%;
+.dropdown .icon-image {
     transition: all 0.4s;
 }
-#theme-button:hover img {
-    filter: brightness(1.75);
+.dropdown:hover .dropdown-image {
+    transform: rotateX(180deg);
+}
+.icon-image {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.5);
+}
+.dropdown:hover .dropdown-image {
+    filter: brightness(1);
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown-content {
+    position: absolute;
+    display: none;
+    left: 0;
+}
+.dropdown-content div {
+    position: relative;
+}
+#theme-button .icon-image {
+    transition: all 1s;
+}
+#theme-button:hover .icon-image {
+    filter: brightness(1);
     transform: rotate(45deg);
 }
+#mute-button:hover .icon-image {
+    filter: brightness(1);
+}
 
+
+
+/* animation */
 @keyframes overlaychange {
     0% { 
         opacity: 1;

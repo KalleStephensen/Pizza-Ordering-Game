@@ -15,8 +15,16 @@
         <div id="image-overlay-container">
             <img id="image-overlay" src="images/placeholder.jpg">
         </div>
-        <div id="theme-button" onclick="changeTheme()">
-            <img src="images/theme.svg">
+        <div class="dropdown icon">
+            <img class="icon-image dropdown-image" src="images/dropdown.svg">
+            <div class="dropdown-content">
+                <div id="theme-button" class="icon" onclick="changeTheme()">
+                    <img class="icon-image" src="images/theme.svg">
+                </div>
+                <div id="mute-button" class="icon" onclick="mute()">
+                    <img id="mute-button-image" class="icon-image" src="images/unmute.svg">
+                </div>
+            </div>
         </div>
         <div id="image-container" class="container">
             <img id="screen-image" src="images/placeholder.jpg">
