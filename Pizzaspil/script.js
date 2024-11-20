@@ -9,8 +9,10 @@ document.addEventListener('mousemove', (e) => {
     pizzaCursor.style.top = `${e.pageY+25}px`;
 });
 
+
+
 const startScenario = {
-    scenarioImage:'images/start.svg',
+    scenarioImage:'images/start.png',
     text:'',
     option1:"",
     option2:"",
@@ -75,8 +77,32 @@ const scenario62 = {
 }
 const scenario7 = {
     scenarioImage:'images/s2.png',
-    text:'Det lyder fandme som en lækker pizza! En ',
-    option1:"",
+    text:'',
+    option1:"> Continue",
+    option2:"",
+    option3:"",
+    option4:"",
+}
+const scenario8 = {
+    scenarioImage:'images/s2.png',
+    text:'Ratfael spørger om betaling.',
+    option1:"> Betal Ratfael",
+    option2:"> Du får ikke en rød reje!!!",
+    option3:"",
+    option4:"",
+}
+const scenario91 = {
+    scenarioImage:'images/s2.png',
+    text:'En fornøjelse at gøre fortening med dig. Pizzaen er klar om 10 minutter.',
+    option1:"> ",
+    option2:"",
+    option3:"",
+    option4:"",
+}
+const scenario92 = {
+    scenarioImage:'images/s2.png',
+    text:'Fuck dig du får ingen pizza af mig!!!',
+    option1:"> Flygt fra Pizzonia",
     option2:"",
     option3:"",
     option4:"",
@@ -90,10 +116,11 @@ let sauce = ""
 let toppingType = ""
 let topping = ""
 
-let i = 0;
-let typingSpeed = 25;
+let i = 0
+let typingSpeed = 25
+let enableButton = true
 
-let currentScenario = startScenario;
+let currentScenario = startScenario
 
 updateCurrentScenario()
 
@@ -101,93 +128,108 @@ function start() {
     document.getElementById('start-button').remove();
     currentScenario = scenario1
     updateCurrentScenario()
-    backgroundMusic.play();
+    backgroundMusic.play()
 }
 
 function option1() {
-    if (currentScenario == scenario1) {
-        currentScenario = scenario2
-    } else if (currentScenario == scenario2) {
-        currentScenario = scenario3
-    } else if (currentScenario == scenario3) {
-        pizzabund = scenario3.option1.slice(2)
-        currentScenario = scenario4
-    } else if (currentScenario == scenario4) {
-        sauce = scenario4.option1.slice(2)
-        currentScenario = scenario5
-    } else if (currentScenario == scenario5) {
-        toppingType = "Vegetarian"
-        currentScenario = scenario61
-    } else if (currentScenario == scenario61) {
-        topping = scenario61.option1.slice(2)
-        currentScenario = scenario7
-        scenario7.text = 'Det lyder fandme som en lækker pizza! En ' + pizzabund + ' pizzabund med ' + sauce + '. Godt valg med en ' + toppingType + ' pizza. Det lyder satme også frækt med ' + topping + '.'
-    } else if (currentScenario == scenario62) {
-        topping = scenario62.option1.slice(2)
-        currentScenario = scenario7
-        scenario7.text = 'Det lyder fandme som en lækker pizza! En ' + pizzabund + ' pizzabund med ' + sauce + '. Godt valg med en ' + toppingType + ' pizza. Det lyder satme også frækt med ' + topping + '.'
+    if (enableButton & currentScenario.option1 != "") {
+        if (currentScenario == scenario1) {
+            currentScenario = scenario2
+        } else if (currentScenario == scenario2) {
+            currentScenario = scenario3
+        } else if (currentScenario == scenario3) {
+            pizzabund = scenario3.option1.slice(2)
+            currentScenario = scenario4
+        } else if (currentScenario == scenario4) {
+            sauce = scenario4.option1.slice(2)
+            currentScenario = scenario5
+        } else if (currentScenario == scenario5) {
+            toppingType = "Vegetarian"
+            currentScenario = scenario61
+        } else if (currentScenario == scenario61) {
+            topping = scenario61.option1.slice(2)
+            currentScenario = scenario7
+            scenario7Text()
+        } else if (currentScenario == scenario62) {
+            topping = scenario62.option1.slice(2)
+            currentScenario = scenario7
+            scenario7Text()
+        } else if (currentScenario == scenario7) {
+            currentScenario = scenario8
+        }
+        
+        updateCurrentScenario()
+        buttonSound.play()
     }
-
-    updateCurrentScenario()
-    buttonSound.play();
 }
 
 function option2() {
-    if (currentScenario == scenario3) {
-        pizzabund = scenario3.option2.slice(2)
-        currentScenario = scenario4
-    } else if (currentScenario == scenario4) {
-        sauce = scenario4.option2.slice(2)
-        currentScenario = scenario5
-    } else if (currentScenario == scenario5) {
-        toppingType = "Meat"
-        currentScenario = scenario62
-    } else if (currentScenario == scenario61) {
-        topping = scenario61.option2.slice(2)
-        currentScenario = scenario7
-        scenario7.text = 'Det lyder fandme som en lækker pizza! En ' + pizzabund + ' pizzabund med ' + sauce + '. Godt valg med en ' + toppingType + ' pizza. Det lyder satme også frækt med ' + topping + '.'
-    } else if (currentScenario == scenario62) {
-        topping = scenario62.option2.slice(2)
-        currentScenario = scenario7
-        scenario7.text = 'Det lyder fandme som en lækker pizza! En ' + pizzabund + ' pizzabund med ' + sauce + '. Godt valg med en ' + toppingType + ' pizza. Det lyder satme også frækt med ' + topping + '.'
-    }
+    if (enableButton & currentScenario.option2 != "") {
+        if (currentScenario == scenario3) {
+            pizzabund = scenario3.option2.slice(2)
+            currentScenario = scenario4
+        } else if (currentScenario == scenario4) {
+            sauce = scenario4.option2.slice(2)
+            currentScenario = scenario5
+        } else if (currentScenario == scenario5) {
+            toppingType = "Meat"
+            currentScenario = scenario62
+        } else if (currentScenario == scenario61) {
+            topping = scenario61.option2.slice(2)
+            currentScenario = scenario7
+            scenario7Text()
+        } else if (currentScenario == scenario62) {
+            topping = scenario62.option2.slice(2)
+            currentScenario = scenario7
+            scenario7Text()
+        }
 
-    updateCurrentScenario()
-    buttonSound.play();
+        updateCurrentScenario()
+        buttonSound.play()
+    }
 }
 
 function option3() {
-    if (currentScenario == scenario3) {
-        pizzabund = scenario3.option3.slice(2)
-        currentScenario = scenario4
-    } else if (currentScenario == scenario4) {
-        sauce = scenario4.option3.slice(2)
-        currentScenario = scenario5
-    } else if (currentScenario == scenario62) {
-        topping = scenario62.option3.slice(2)
-        currentScenario = scenario7
-        scenario7.text = 'Det lyder fandme som en lækker pizza! En ' + pizzabund + ' pizzabund med ' + sauce + '. Godt valg med en ' + toppingType + ' pizza. Det lyder satme også frækt med ' + topping + '.'
-    }
+    if (enableButton & currentScenario.option3 != "") {
+        if (currentScenario == scenario3) {
+            pizzabund = scenario3.option3.slice(2)
+            currentScenario = scenario4
+        } else if (currentScenario == scenario4) {
+            sauce = scenario4.option3.slice(2)
+            currentScenario = scenario5
+        } else if (currentScenario == scenario62) {
+            topping = scenario62.option3.slice(2)
+            currentScenario = scenario7
+            scenario7Text()
+        }
 
-    updateCurrentScenario()
-    buttonSound.play();
+        updateCurrentScenario()
+        buttonSound.play()
+    }
 }
 
 function option4() {
-    if (currentScenario == scenario62) {
-        topping = scenario62.option4.slice(2)
-        currentScenario = scenario7
-        scenario7.text = 'Det lyder fandme som en lækker pizza! En ' + pizzabund + ' pizzabund med ' + sauce + '. Godt valg med en ' + toppingType + ' pizza. Det lyder satme også frækt med ' + topping + '.'
-    }
+    if (enableButton & currentScenario.option4 != "") {
+        if (currentScenario == scenario62) {
+            topping = scenario62.option4.slice(2)
+            currentScenario = scenario7
+            scenario7Text()
+        }
 
-    updateCurrentScenario()
-    buttonSound.play();
+        updateCurrentScenario()
+        buttonSound.play()
+    }
 }
 
 function updateCurrentScenario() {
+    enableButton = false
     i = 0
     document.getElementById('overlay').style.display = "block";
     document.getElementById('paragraph').innerHTML = "";
+    document.getElementById('option1').innerHTML = "";
+    document.getElementById('option2').innerHTML = "";
+    document.getElementById('option3').innerHTML = "";
+    document.getElementById('option4').innerHTML = "";
     setTimeout(removeOverlay, 2000)
     
     function removeOverlay() {
@@ -196,17 +238,21 @@ function updateCurrentScenario() {
         typeText()
         function typeText() {
             if (i < currentScenario.text.length) {
-                document.getElementById('paragraph').innerHTML += currentScenario.text.charAt(i);
-                i++;
-                let typeTimeout = setTimeout(typeText, typingSpeed);
+                document.getElementById('paragraph').innerHTML += currentScenario.text.charAt(i)
+                i++
+                let typeTimeout = setTimeout(typeText, typingSpeed)
+            } else {
+                enableButton = true
+                document.getElementById('option1').innerHTML = currentScenario.option1
+                document.getElementById('option2').innerHTML = currentScenario.option2
+                document.getElementById('option3').innerHTML = currentScenario.option3
+                document.getElementById('option4').innerHTML = currentScenario.option4
             }
         }
     }
-    
     document.getElementById('myImage').src = currentScenario.scenarioImage;
-    document.getElementById('option1').innerHTML = currentScenario.option1;
-    document.getElementById('option2').innerHTML = currentScenario.option2;
-    document.getElementById('option3').innerHTML = currentScenario.option3;
-    document.getElementById('option4').innerHTML = currentScenario.option4;
 }
 
+function scenario7Text() {
+    scenario7.text = 'Det lyder fandme som en lækker pizza! En ' + pizzabund + ' pizzabund med ' + sauce + '. Godt valg med en ' + toppingType + ' pizza. Det lyder satme også frækt med ' + topping + '.'
+}
