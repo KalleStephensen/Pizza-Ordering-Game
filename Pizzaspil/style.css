@@ -84,8 +84,8 @@ body {
     bottom: 0px;
     width: 100%;
     height: 20%;
-    font-size: 20px;
-    line-height: 0.2;
+    font-size: 1.3rem;
+    line-height: 0;
 }
 #dialog-container div {
     height: 25%;
@@ -126,9 +126,9 @@ body {
     height: 100%;
     transition: all 0.4s;
 }
-#theme-button img:hover {
+#theme-button:hover img {
     filter: brightness(1.75);
-    transform: rotate(20deg);
+    transform: rotate(45deg);
 }
 
 @keyframes overlaychange {
