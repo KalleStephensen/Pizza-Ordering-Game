@@ -7,6 +7,7 @@ body {
     cursor: none;
 }
 #game-viewport {
+    position: relative;
     width: var(--viewport-width);
     height: var(--viewport-height);
     margin: auto;
@@ -37,7 +38,7 @@ body {
     animation-duration: 2s;
 }
 #crt-filter img {
-    z-index: 2;
+    z-index: 5;
     position: absolute;
     width: var(--viewport-width);
     height: var(--viewport-height);
@@ -96,14 +97,10 @@ body {
     padding-left: 3%;
 }
 #start-button {
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
     position: absolute;
-    width: 40%;
-    height: 15%;
-    top: 380px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
     display: flex;
     align-items: center;
     font-size: 4rem;
@@ -120,10 +117,10 @@ body {
 /* dropdown menu */
 .icon {
     z-index: 4;
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
+    position: absolute;
+    width: calc(var(--viewport-width) * 0.04);
+    height: auto;
+    padding: calc(var(--viewport-width) * 0.01);
 }
 .dropdown .icon-image {
     transition: all 0.4s;
@@ -151,7 +148,7 @@ body {
     position: relative;
 }
 #theme-button .icon-image {
-    transition: all 1s;
+    transition: all 0.4s;
 }
 #theme-button:hover .icon-image {
     filter: brightness(1);
