@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratfael's Pizza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-viewport">
+        <div id="overlay"></div>
+        <div id="crt-filter">
+            <img src="images/CRT.png">
+        </div>
+        <div id="image-overlay-container">
+            <img id="image-overlay" src="images/placeholder.jpg">
+        </div>
+        <div id="theme-button" onclick="changeTheme()">
+            <img src="images/theme.svg">
+        </div>
+        <div id="image-container" class="container">
+            <img id="screen-image" src="images/placeholder.jpg">
+        </div>
+        <div id="start-button" onclick="start()">
+            <p>Visit Pizzonia</p>
+        </div>
+        <div id="text-container" class="container" onclick="skip()">
+            <p id="paragraph"></p>
+        </div>
+        <div id="dialog-container" class="container">
+            <div class="container" onclick="option1()">
+                <p id="option1">> Option 1</p>
+            </div>
+            <div class="container" onclick="option2()">
+                <p id="option2">> Option 2</p>
+            </div>
+            <div class="container" onclick="option3()">
+                <p id="option3">> Option 3</p>
+            </div>
+            <div class="container" onclick="option4()">
+                <p id="option4">> Option 4</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
