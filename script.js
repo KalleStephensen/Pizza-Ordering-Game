@@ -18,6 +18,7 @@ const startScenario = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario1 = {
     scenarioImage:'images/s1.png',
@@ -26,6 +27,7 @@ const scenario1 = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario2 = {
     scenarioImage:'images/s2.png',
@@ -34,6 +36,7 @@ const scenario2 = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario3 = {
     scenarioImage:'images/s3.png',
@@ -42,6 +45,7 @@ const scenario3 = {
     option2:"> Glutenfree",
     option3:"> Crisp",
     option4:"",
+    sound:"",
 }
 const scenario4 = {
     scenarioImage:'images/s4.png',
@@ -50,6 +54,7 @@ const scenario4 = {
     option2:"> Garlic with a splash of oil",
     option3:"> Spicy Tomato Sauce",
     option4:"",
+    sound:"",
 }
 const scenario5 = {
     scenarioImage:'images/s5.png',
@@ -58,6 +63,7 @@ const scenario5 = {
     option2:"> Is that even a question!? Meat all the way!",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario61 = {
     scenarioImage:'images/s61.png',
@@ -66,6 +72,7 @@ const scenario61 = {
     option2:"> Spinach (Cheese, Spinach, Gorgonzola, Garlic)",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario62 = {
     scenarioImage:'images/s62.png',
@@ -74,6 +81,7 @@ const scenario62 = {
     option2:"> THE MEAT BOMB (Bacon, Chicken, Kebab, Pepperoni, Ham)",
     option3:"> SANTA MARIA (Cheese, Beef, Ham, Bacon, Sausages)",
     option4:"> MARINARA (Cheese, Tuna, Shrimp, Clams, Olives)",
+    sound:"",
 }
 const scenario7 = {
     scenarioImage:'images/s7.png',
@@ -82,6 +90,7 @@ const scenario7 = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario8 = {
     scenarioImage:'images/s8.png',
@@ -90,6 +99,7 @@ const scenario8 = {
     option2:"> Your are not getting a dime from me, you sleezy rat!",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario91 = {
     scenarioImage:'images/s91.png',
@@ -98,6 +108,7 @@ const scenario91 = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 const scenario92 = {
     scenarioImage:'images/s92.png',
@@ -106,6 +117,7 @@ const scenario92 = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 const endScenario1 = {
     scenarioImage:'images/ends1.png',
@@ -114,6 +126,7 @@ const endScenario1 = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 const endScenario2 = {
     scenarioImage:'images/ends2.png',
@@ -122,11 +135,13 @@ const endScenario2 = {
     option2:"",
     option3:"",
     option4:"",
+    sound:"",
 }
 
-let backgroundMusic = new Audio('audio/background-music.mp3');
-let badEndingMusic = new Audio('audio/bad-ending.mp3');
-let buttonSound = new Audio('audio/button.mp3');
+let backgroundMusic = new Audio('audio/background-music.mp3')
+let badEndingMusic = new Audio('audio/bad-ending.mp3')
+let buttonSound = new Audio('audio/button.mp3')
+let scenarioSound = new Audio('')
 
 let pizzabund = ""
 let sauce = ""
@@ -252,6 +267,9 @@ function option4() {
 function updateCurrentScenario() {
     enableButton = false
     i = 0
+    scenarioSound = new Audio(currentScenario.sound)
+    scenarioSound.currentTime = 0
+    scenarioSound.play()
     document.getElementById('overlay').style.display = "block";
     document.getElementById('paragraph').innerHTML = "";
     document.getElementById('option1').innerHTML = "";
@@ -361,5 +379,20 @@ function mute() {
         badEndingMusic.muted = false
         buttonSound.muted = false
         document.getElementById('mute-button-image').src = "images/unmute.svg"
+    }
+}
+
+// dropdown menu
+let isDropdownExpanded = false
+
+function dropdown() {
+    if (isDropdownExpanded == false) {
+        isDropdownExpanded = true
+        document.getElementById('dropdown-content').style.display = "block"
+        document.getElementById('dropdown-image').style.transform = "rotateX(180deg)"
+    } else if (isDropdownExpanded) {
+        isDropdownExpanded = false
+        document.getElementById('dropdown-content').style.display = "none"
+        document.getElementById('dropdown-image').style.transform = "none"
     }
 }

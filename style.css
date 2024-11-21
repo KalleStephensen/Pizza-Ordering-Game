@@ -126,9 +126,6 @@ body {
 .dropdown .icon-image {
     transition: transform 0.4s;
 }
-.dropdown:hover .dropdown-image {
-    transform: rotateX(180deg);
-}
 .icon-image {
     width: 100%;
     height: 100%;
@@ -138,9 +135,6 @@ body {
 }
 .dropdown:hover .dropdown-image {
     filter:  invert(25%) sepia(89%) saturate(6593%) hue-rotate(355deg) brightness(101%) contrast(121%);
-}
-.dropdown:hover .dropdown-content{
-    display: block;
 }
 .dropdown-content {
     position: absolute;
