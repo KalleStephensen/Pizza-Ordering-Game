@@ -92,7 +92,7 @@ const scenario8 = {
     option4:"",
 }
 const scenario91 = {
-    scenarioImage:'images/s9.png',
+    scenarioImage:'images/s91.png',
     text:'“A pleasure doing business with you. Your pizza will be ready in 10 minutes.”',
     option1:"> Wait for the pizza",
     option2:"",
